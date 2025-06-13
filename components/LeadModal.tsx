@@ -141,7 +141,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
             </span>
           </h2>
           <p className="text-gray-300">
-            Faça parte do grupo que terá acesso exclusivo às informações da Terceira Onda.
+            Forneça seus dados para receber uma mensagem no seu WhatsApp com as informações da Terceira Onda.
           </p>
         </div>
 
