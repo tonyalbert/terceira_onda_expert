@@ -67,7 +67,7 @@ export default function CtaFinalSection({ onOpenModal }: CtaFinalSectionProps) {
       <div className="max-w-6xl mx-auto text-center">
         {/* Título de Urgência */}
         <div className={`mb-12 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase">
+          <h2 className="font-black text-3xl md:text-5xl text-white mb-6 uppercase">
             Não Deixe Esta
             <span className="block bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
               OPORTUNIDADE PASSAR

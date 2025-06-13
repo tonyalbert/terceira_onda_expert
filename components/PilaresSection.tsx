@@ -105,9 +105,9 @@ export default function PilaresSection() {
       <div className="max-w-7xl mx-auto">
         {/* Título da Seção */}
         <div className={`text-center mb-16 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase">
-            Os Pilares da
-            <span className="block bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="font-black text-3xl md:text-5xl text-white mb-6 uppercase">
+            OS PILARES DA
+            <span className="block font-black bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
               TERCEIRA ONDA
             </span>
           </h2>

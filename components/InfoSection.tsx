@@ -88,9 +88,9 @@ export default function InfoSection() {
           <Badge variant="outline" className="mb-4 text-purple-400 border-purple-400/30 bg-purple-400/10">
             MÉTRICAS EM TEMPO REAL
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 text-glow uppercase">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase">
             Números que
-            <span className="block bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+            <span className="block font-black bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
               COMPROVAM O MOVIMENTO
             </span>
           </h2>
