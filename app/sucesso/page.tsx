@@ -32,7 +32,7 @@ export default function SucessoPage() {
         {/* Success Message */}
         <div className={`mb-8 ${isVisible ? 'fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6">
-            <span className="block bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent text-glow">
+            <span className="block white">
               CADASTRO REALIZADO
             </span>
             <span className="block text-green-400">

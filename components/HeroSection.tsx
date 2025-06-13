@@ -205,7 +205,7 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
         >
           <div className="flex items-center justify-center mb-6 md:mb-8">
             <Clock className="hidden sm:block w-6 h-6 md:w-8 md:h-8 text-purple-400 mr-2 md:mr-3 animate-pulse-slow" />
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-200 to-purple-300 bg-clip-text text-transparent text-center drop-shadow-lg">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
               Lançamento em 12 de Julho
             </h2>
           </div>

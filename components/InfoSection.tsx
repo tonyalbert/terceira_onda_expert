@@ -67,20 +67,6 @@ export default function InfoSection() {
 
   return (
     <section ref={ref} className="py-20 px-4 relative overflow-hidden">
-      {/* Background orbital system */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[600px] h-[600px]">
-          {/* Orbital rings */}
-          <div className="absolute inset-0 border-2 border-purple-500/20 rounded-full animate-spin-slow"></div>
-          <div className="absolute inset-4 border border-purple-500/10 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }}></div>
-          <div className="absolute inset-8 border border-purple-500/5 rounded-full animate-spin-slow" style={{ animationDuration: '25s' }}></div>
-          
-          {/* Floating particles */}
-          <div className="absolute top-0 left-1/2 w-4 h-4 bg-purple-500 rounded-full blur-sm animate-float"></div>
-          <div className="absolute bottom-0 right-1/2 w-3 h-3 bg-purple-400 rounded-full blur-sm animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 right-0 w-2 h-2 bg-purple-300 rounded-full blur-sm animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section title */}
