@@ -102,8 +102,8 @@ export default function ConceitoSection() {
       </div>
 
       {/* Background Elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl"></div>
+      {/* <div className="absolute top-24 left-10 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl"></div> */}
+      {/* <div className="absolute bottom-24 right-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl"></div> */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-purple-600/5 to-purple-600/5 rounded-full blur-3xl"></div>
     </section>
   );
