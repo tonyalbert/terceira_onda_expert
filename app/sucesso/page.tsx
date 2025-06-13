@@ -23,8 +23,8 @@ export default function SucessoPage() {
 
       <div className="max-w-2xl mx-auto text-center relative z-10">
         {/* Success Icon */}
-        <div className={`mb-8 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
-          <div className="flex items-center justify-center w-32 h-32 bg-gradient-to-r from-green-500 to-green-400 rounded-full mx-auto mb-6 shadow-2xl animate-pulse-slow">
+        <div className={`mb-8 ${isVisible ? 'fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+          <div className="flex items-center justify-center w-32 h-32 bg-green-400 rounded-full mx-auto mb-6 shadow-2xl">
             <CheckCircle className="w-16 h-16 text-white" />
           </div>
         </div>

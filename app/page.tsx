@@ -24,15 +24,22 @@ export default function Home() {
   return (
     <>
       <FloatingParticles />
-      <main className="relative min-h-screen bg-black overflow-x-hidden">
-        {/* Dark mysterious background */}
-        <div className="fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-900/10 via-transparent to-transparent"></div>
+      <main className="relative min-h-screen overflow-x-hidden" style={{ overscrollBehavior: 'none' }}>
+        {/* Gradient único e contínuo por toda a página */}
+        <div className="fixed inset-0 bg-gradient-to-br from-black via-purple-950/40 via-purple-900/30 to-black" style={{ height: '120vh', top: '-10vh' }}>
+          <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 via-transparent to-violet-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-purple-800/15 to-black"></div>
         </div>
         
         <div className="relative z-10">
           <HeroSection onOpenModal={handleOpenModal} />
+          
+          {/* Linha separadora com gradiente roxo */}
+          <div className="relative w-full h-px">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/60 via-purple-400/40 via-purple-300/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/40 via-purple-500/20 to-transparent blur-sm"></div>
+          </div>
+          
           <InfoSection />
           <ConceitoSection />
           <PilaresSection />

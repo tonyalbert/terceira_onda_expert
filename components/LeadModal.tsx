@@ -15,14 +15,64 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [telefoneError, setTelefoneError] = useState('');
   const router = useRouter();
+
+  // Função para validar e-mail
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Função para aplicar máscara de telefone
+  const formatTelefone = (value: string) => {
+    // Remove tudo que não é número
+    const numbers = value.replace(/\D/g, '');
+    
+    // Aplica a máscara baseada na quantidade de números
+    if (numbers.length <= 2) {
+      return `(${numbers}`;
+    } else if (numbers.length <= 7) {
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    } else if (numbers.length <= 11) {
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+    } else {
+      // Limita a 11 dígitos
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
+    }
+  };
+
+  // Função para validar telefone
+  const validateTelefone = (telefone: string) => {
+    const numbers = telefone.replace(/\D/g, '');
+    return numbers.length >= 10; // Mínimo 10 dígitos (DDD + número)
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validação básica
-    if (!email || !telefone) {
-      alert('Por favor, preencha todos os campos.');
+    // Reset errors
+    setEmailError('');
+    setTelefoneError('');
+
+    // Validação de e-mail
+    if (!email) {
+      setEmailError('E-mail é obrigatório');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setEmailError('Por favor, insira um e-mail válido');
+      return;
+    }
+
+    // Validação de telefone
+    if (!telefone) {
+      setTelefoneError('Telefone é obrigatório');
+      return;
+    }
+    if (!validateTelefone(telefone)) {
+      setTelefoneError('Por favor, insira um telefone válido (mínimo 10 dígitos)');
       return;
     }
 
@@ -85,9 +135,9 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-4">
-            INFORME SEUS DADOS PARA
+            INFORME SEUS DADOS PARA&nbsp;   
             <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-              CONTATO
+               CONTATO
             </span>
           </h2>
           <p className="text-gray-300">
@@ -104,22 +154,37 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                 type="email"
                 placeholder="Seu melhor e-mail"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="pl-12 bg-black/50 border-purple-500/30 text-white placeholder-gray-400 focus:border-purple-400"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (emailError) setEmailError(''); // Limpa erro ao digitar
+                }}
+                className={`pl-12 bg-black/50 text-white placeholder-gray-400 focus:border-purple-400 ${
+                  emailError ? 'border-red-500' : 'border-purple-500/30'
+                }`}
               />
+              {emailError && (
+                <p className="text-red-400 text-xs mt-1">{emailError}</p>
+              )}
             </div>
 
             <div className="relative">
               <Phone className="absolute left-3 top-4 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
               <Input
                 type="tel"
-                placeholder="ex: (11)99999-9999"
+                placeholder="(11) 99999-9999"
                 value={telefone}
-                onChange={(e) => setTelefone(e.target.value)}
-                required
-                className="pl-14 bg-black/50 border-purple-500/30 text-white placeholder-gray-400 focus:border-purple-400"
+                onChange={(e) => {
+                  const formatted = formatTelefone(e.target.value);
+                  setTelefone(formatted);
+                  if (telefoneError) setTelefoneError(''); // Limpa erro ao digitar
+                }}
+                className={`pl-14 bg-black/50 text-white placeholder-gray-400 focus:border-purple-400 ${
+                  telefoneError ? 'border-red-500' : 'border-purple-500/30'
+                }`}
               />
+              {telefoneError && (
+                <p className="text-red-400 text-xs mt-1">{telefoneError}</p>
+              )}
               <p className="text-xs text-gray-400 mt-1">
                 Você receberá nosso contato por WhatsApp
               </p>

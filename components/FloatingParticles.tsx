@@ -39,10 +39,10 @@ export default function FloatingParticles() {
       '6,182,212',  // Ciano mais escuro
     ];
 
-    const particleCount = isMobile ? 25 : 50;
-    const baseSize = isMobile ? 20 : 40;
-    const baseOpacity = isMobile ? 0.15 : 0.3;
-    const baseBlur = isMobile ? 10 : 20;
+    const particleCount = isMobile ? 15 : 30;
+    const baseSize = isMobile ? 15 : 30;
+    const baseOpacity = isMobile ? 0.1 : 0.2;
+    const baseBlur = isMobile ? 8 : 15;
 
     for (let i = 0; i < particleCount; i++) {
       const size = Math.random() * baseSize + 10;
@@ -77,7 +77,7 @@ export default function FloatingParticles() {
   }, [createParticles, isMobile]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+    <div className="fixed pointer-events-none overflow-hidden -z-10" style={{ top: '-10vh', left: '0', right: '0', height: '120vh' }}>
       {particles.map((particle) => (
         <div
           key={particle.id}
@@ -101,10 +101,10 @@ export default function FloatingParticles() {
           } as React.CSSProperties}
         />
       ))}
-      {/* Orbs maiores e misteriosos */}
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[#9919FE]/30 rounded-full blur-3xl animate-pulse float-slow" />
-      <div className="absolute top-2/3 right-1/5 w-96 h-96 bg-[#9919FE]/20 rounded-full blur-3xl animate-pulse float-slow" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#9919FE]/25 rounded-full blur-2xl animate-pulse float-slow" style={{ animationDelay: '4s' }} />
+      {/* Orbs sutis para complementar o gradient */}
+      <div className="absolute top-1/4 left-1/4 w-60 h-60 bg-purple-500/15 rounded-full blur-3xl animate-pulse float-slow" />
+      <div className="absolute top-2/3 right-1/5 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-pulse float-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-violet-500/12 rounded-full blur-2xl animate-pulse float-slow" style={{ animationDelay: '4s' }} />
       <style jsx global>{`
         @keyframes particleFloat1 {
           0% { transform: translateY(0) scale(1); }

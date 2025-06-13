@@ -142,15 +142,15 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
           ref={titleRef}
           className={`mb-6 md:mb-8 transition-all duration-700 ${titleVisible ? 'slide-in-left' : 'opacity-0'}`}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-black mb-4 md:mb-6 leading-tight">
+          {/* <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-black mb-4 md:mb-6 leading-tight">
             <span className="block text-purple-400">
               TERCEIRA
             </span>
             <span className="block bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent drop-shadow-2xl filter brightness-110 -mt-2 md:-mt-4">
               ONDA
             </span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-2xl lg:text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed font-light px-2 drop-shadow-lg">
+          </h1> */}
+          <p className="text-base sm:text-lg md:text-2xl lg:text-2xl bg-gradient-to-r from-purple-200 to-purple-400 bg-clip-text text-transparent max-w-4xl mx-auto leading-relaxed font-light px-2 drop-shadow-lg">
             O movimento inevitável que está transformando o mundo dos negócios
           </p>
         </div>

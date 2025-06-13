@@ -70,8 +70,12 @@ export default function CtaFinalSection({ onOpenModal }: CtaFinalSectionProps) {
           <h2 className="font-black text-3xl md:text-5xl text-white mb-6 uppercase">
             Não Deixe Esta
             <span className="block bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-              OPORTUNIDADE PASSAR
+              OPORTUNIDADE &nbsp;
+              <span className="text-white">
+               PASSAR 
             </span>
+            </span>
+            
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             A janela está se abrindo. Os pioneiros já estão se posicionando. 
