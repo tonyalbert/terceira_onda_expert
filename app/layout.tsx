@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
-    title: 'A Terceira Onda - Pré-Marketing',
+    title: 'A Terceira Onda - A Revolução silenciosa',
     description: 'O movimento inevitável que está transformando o mundo dos negócios.',
     type: 'website',
     locale: 'pt_BR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'A Terceira Onda - Pré-Marketing',
+    title: 'A Terceira Onda - A Revolução silenciosa',
     description: 'O movimento inevitável que está transformando o mundo dos negócios.',
   },
 };
