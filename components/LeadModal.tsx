@@ -168,7 +168,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
             </div>
 
             <div className="relative">
-              <Phone className="absolute left-3 top-4 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+              <Phone className="absolute left-3 top-[19px] transform -translate-y-1/2 text-purple-400 w-5 h-5" />
               <Input
                 type="tel"
                 placeholder="(11) 99999-9999"
@@ -178,7 +178,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                   setTelefone(formatted);
                   if (telefoneError) setTelefoneError(''); // Limpa erro ao digitar
                 }}
-                className={`pl-14 bg-black/50 text-white placeholder-gray-400 focus:border-purple-400 ${
+                className={`pl-12 bg-black/50 text-white placeholder-gray-400 focus:border-purple-400 ${
                   telefoneError ? 'border-red-500' : 'border-purple-500/30'
                 }`}
               />
