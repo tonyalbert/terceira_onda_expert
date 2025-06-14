@@ -181,7 +181,7 @@ export default function CtaFinalSection({ onOpenModal }: CtaFinalSectionProps) {
               className="bg-gradient-to-r from-purple-600 to-purple-400 text-white 
                        text-lg sm:text-lg md:text-xl font-bold 
                        px-8 py-6 sm:px-8 sm:py-6 md:px-12 md:py-8 
-                       rounded-full shadow-2xl transition-transform duration-200"
+                       rounded-full shadow-2xl transition-transform duration-200 pulse-glow"
             >
               <Play className="w-7 h-7 md:w-7 md:h-7 mr-2 md:mr-3" />
               SEGUIR O RASTRO

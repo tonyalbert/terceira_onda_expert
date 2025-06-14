@@ -21,37 +21,37 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-[100lvh] overflow-x-hidden">
-      {/* Background com gradiente fixo */}
-      <div 
-        className="fixed inset-0 pointer-events-none" 
-        style={{
-          background: 'radial-gradient(circle at center, rgb(38, 0, 76) 0%, rgb(0, 0, 0) 100%)',
-          backgroundAttachment: 'fixed',
-          zIndex: -1
-        }}
-      />
-      
-      {/* Conteúdo da página */}
-      <div className="relative">
-        <HeroSection onOpenModal={handleOpenModal} />
+    <>
+      <main className="relative min-h-[100lvh] overflow-x-hidden" style={{
+        background: 'radial-gradient(circle at center, rgb(38, 0, 76) 0%, rgb(0, 0, 0) 100%)'
+      }}>
+        {/* Background gradient fixo que cobre toda a tela */}
+        <div className="fixed inset-0 bg-gradient-to-br from-black via-purple-950/30 to-black -z-10"></div>
         
-        {/* Linha separadora com gradiente roxo */}
-        <div className="relative w-full h-px">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/60 via-purple-400/40 via-purple-300/20 to-transparent"></div>
+        {/* Background adicional para mobile */}
+        <div className="absolute inset-0 -z-20" style={{
+          background: 'radial-gradient(circle at center, rgb(38, 0, 76) 0%, rgb(0, 0, 0) 100%)',
+          minHeight: '100vh'
+        }}></div>
+        
+        <div className="relative z-10">
+          <HeroSection onOpenModal={handleOpenModal} />
+          {/* Linha separadora com gradiente roxo */}
+          <div className="relative w-full h-px">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/60 via-purple-400/40 via-purple-300/20 to-transparent"></div>
+          </div>
+          <InfoSection />
+          <ConceitoSection />
+          <PilaresSection />
+          <CtaFinalSection onOpenModal={handleOpenModal} />
+          <Footer />
         </div>
         
-        <InfoSection />
-        <ConceitoSection />
-        <PilaresSection />
-        <CtaFinalSection onOpenModal={handleOpenModal} />
-        <Footer />
-      </div>
-      
-      <LeadModal 
-        isOpen={isModalOpen} 
-        onClose={handleCloseModal} 
-      />
-    </main>
+        <LeadModal 
+          isOpen={isModalOpen} 
+          onClose={handleCloseModal} 
+        />
+      </main>
+    </>
   );
 } 

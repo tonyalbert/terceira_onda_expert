@@ -73,19 +73,19 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
   }, [titleReveal.isInView]);
 
   return (
-    <section className="relative flex items-center justify-center px-4 py-8 md:py-12">
-      <div className="max-w-8xl mx-auto text-center relative z-10 w-full">
+    <section className="relative flex items-center justify-center px-2 sm:px-4 py-6 sm:py-8 md:py-12 min-h-[75vh]">
+      <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
         {/* Título Principal - Mais compacto */}
         <motion.div 
           ref={titleReveal.ref}
           initial="hidden"
           animate={titleReveal.isInView ? "visible" : "hidden"}
           variants={fadeInLeft}
-          className="mb-4 md:mb-6"
+          className="mb-3 sm:mb-4 md:mb-6"
         >
           <motion.p 
             variants={fadeInUp}
-            className={`text-sm sm:text-base md:text-xl lg:text-xl max-w-4xl mx-auto leading-relaxed font-light px-2 shiny-text ${shinyActive ? 'animate' : ''}`}
+            className={`text-xs sm:text-sm md:text-base lg:text-xl xl:text-xl max-w-4xl mx-auto leading-relaxed font-light px-2 shiny-text ${shinyActive ? 'animate' : ''}`}
           >
             O movimento inevitável que está transformando o mundo dos negócios
           </motion.p>
@@ -97,11 +97,11 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
           initial="hidden"
           animate={videoReveal.isInView ? "visible" : "hidden"}
           variants={fadeInUp}
-          className="w-full mx-auto mb-6 md:mb-8 px-1 md:px-4"
+          className="w-full mx-auto mb-4 sm:mb-6 md:mb-8 px-1 sm:px-2 md:px-4"
         >
-          <div className="relative mx-auto w-full max-w-7xl">
+          <div className="relative mx-auto w-full max-w-5xl lg:max-w-6xl">
             {/* Glow effect ao redor do vídeo */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-purple-400/30 to-purple-600/20 rounded-3xl blur-2xl opacity-75"></div>
+            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-purple-600/20 via-purple-400/30 to-purple-600/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-75"></div>
             
             {/* Container do vídeo com destaque */}
             <motion.div 
@@ -113,21 +113,21 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
             >
               {/* Loading placeholder para evitar splash */}
               {!videoLoaded && (
-                <div className="absolute inset-0 bg-black/95 rounded-2xl flex items-center justify-center z-10">
-                  <div className="flex flex-col items-center space-y-6">
-                    <div className="w-20 h-20 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin"></div>
-                    <div className="text-center">
-                      <p className="text-purple-400 text-lg font-medium">Carregando vídeo...</p>
-                      <p className="text-purple-300/70 text-sm mt-1">Prepare-se para descobrir a Terceira Onda</p>
+                <div className="absolute inset-0 bg-black/95 rounded-xl sm:rounded-2xl flex items-center justify-center z-10">
+                  <div className="flex flex-col items-center space-y-4 sm:space-y-6">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin"></div>
+                    <div className="text-center px-4">
+                      <p className="text-purple-400 text-base sm:text-lg font-medium">Carregando vídeo...</p>
+                      <p className="text-purple-300/70 text-xs sm:text-sm mt-1">Prepare-se para descobrir a Terceira Onda</p>
                     </div>
                   </div>
                 </div>
               )}
               
               {/* Indicador de PLAY destacado */}
-              <div className="absolute top-4 left-4 z-20 bg-purple-600/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center space-x-2">
-                <Play className="w-4 h-4 text-white" />
-                <span className="text-white text-xs md:text-sm font-medium">ASSISTA AGORA</span>
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 bg-purple-600/90 backdrop-blur-sm rounded-full px-2 py-1 sm:px-4 sm:py-2 flex items-center space-x-1 sm:space-x-2">
+                <Play className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                <span className="text-white text-xs sm:text-xs md:text-sm font-medium">ASSISTA AGORA</span>
               </div>
               
               <iframe
@@ -139,13 +139,13 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
               />
               
               {/* Borda brilhante animada */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-purple-400/50 pointer-events-none video-glow-border"></div>
+              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-purple-400/50 pointer-events-none video-glow-border"></div>
             </motion.div>
             
             {/* Call-to-action abaixo do vídeo */}
             <motion.div 
               variants={fadeInUp}
-              className="mt-4 text-center"
+              className="mt-3 sm:mt-4 text-center"
             >
               {/* <p className="text-purple-300 text-sm md:text-base font-medium">
                 👆 <span className="text-white">Descubra os segredos da Terceira Onda</span> 👆
@@ -160,7 +160,7 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
           initial="hidden"
           animate={buttonReveal.isInView ? "visible" : "hidden"}
           variants={fadeInUp}
-          className="mb-8 md:mb-10"
+          className="mb-6 sm:mb-8 md:mb-10"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -170,17 +170,17 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
             <Button
               onClick={onOpenModal}
               className="bg-gradient-to-r from-purple-600 to-purple-400 text-white 
-                       text-lg sm:text-lg md:text-xl font-bold 
-                       px-8 py-6 sm:px-8 sm:py-6 md:px-12 md:py-8 
+                       text-base sm:text-lg md:text-xl font-bold 
+                       px-6 py-4 sm:px-8 sm:py-6 md:px-12 md:py-8 
                        rounded-full shadow-2xl transition-transform duration-200 pulse-glow"
             >
-              <Play className="w-7 h-7 md:w-7 md:h-7 mr-2 md:mr-3" />
+              <Play className="w-5 h-5 sm:w-7 sm:h-7 md:w-7 md:h-7 mr-2 md:mr-3" />
               SEGUIR O RASTRO
             </Button>
           </motion.div>
           <motion.p 
             variants={fadeInUp}
-            className="mt-3 md:mt-4 text-purple-200 text-xs sm:text-sm font-mono tracking-wider"
+            className="mt-2 sm:mt-3 md:mt-4 text-purple-200 text-xs sm:text-xs font-mono tracking-wider"
           >
             [ ACESSO EXCLUSIVO - LIMITADO ]
           </motion.p>
@@ -195,16 +195,16 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
         >
           <motion.div 
             variants={fadeInUp}
-            className="flex items-center justify-center mb-4 md:mb-6"
+            className="flex items-center justify-center mb-3 sm:mb-4 md:mb-6"
           >
-            <Clock className="hidden sm:block w-5 h-5 md:w-6 md:h-6 text-purple-400 mr-2" />
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
+            <Clock className="hidden sm:block w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-400 mr-2" />
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white">
               Lançamento em 12 de Julho
             </h2>
           </motion.div>
           <motion.div 
             variants={staggerContainer}
-            className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-xl mx-auto px-2"
+            className="grid grid-cols-4 gap-1 sm:gap-2 md:gap-4 max-w-sm sm:max-w-xl mx-auto px-2"
           >
             {[
               { value: timeLeft.days, label: 'DIAS' },
@@ -218,10 +218,10 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="bg-black/40 backdrop-blur-sm rounded-lg md:rounded-xl 
-                         p-2 sm:p-3 md:p-4 
+                         p-1 sm:p-2 md:p-4 
                          border border-purple-500/20"
               >
-                <div className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-black bg-gradient-to-b from-purple-200 to-white bg-clip-text text-transparent">
+                <div className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black bg-gradient-to-b from-purple-200 to-white bg-clip-text text-transparent">
                   {expired ? '00' : item.value.toString().padStart(2, '0')}
                 </div>
                 <div className="text-xs sm:text-xs text-purple-300 font-medium tracking-wider mt-1">
